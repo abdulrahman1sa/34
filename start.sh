@@ -9,5 +9,5 @@ else
   npm install
 fi
 
-npm run build >/dev/null 2>&1 || true
+npm run build
 npm start
