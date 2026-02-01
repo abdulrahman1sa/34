@@ -1,6 +1,5 @@
-﻿#!/usr/bin/env sh
+#!/usr/bin/env sh
 set -e
-
 cd Tech-Chat-Bot
 
 if [ -f package-lock.json ]; then
