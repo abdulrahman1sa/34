@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  
+  --font-sans: 'Cairo', 'IBM Plex Sans Arabic', sans-serif;
+}
+
+:root {
+  /* Fresh Health Theme: White, Mint Green, Soft Blue */
+  --background: 210 20% 98%;     /* Very light cool gray/white */
+  --foreground: 210 20% 20%;     /* Dark slate for text */
+
+  --card: 0 0% 100%;             /* Pure white cards */
+  --card-foreground: 210 20% 20%;
+  
+  --popover: 0 0% 100%;
+  --popover-foreground: 210 20% 20%;
+
+  --primary: 150 60% 45%;        /* #2EBD7E - Fresh Minty Green */
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 200 60% 50%;      /* Soft Blue for accents */
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 210 20% 94%;
+  --muted-foreground: 210 10% 50%;
+
+  --accent: 150 60% 45%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 210 20% 90%;
+  --input: 210 20% 90%;
+  --ring: 150 60% 45%;
+  
+  --radius: 1.5rem; /* Softer, friendlier corners */
+}
+
+body {
+  @apply bg-background text-foreground font-sans antialiased selection:bg-primary/30 selection:text-primary-foreground;
+  background-image: url('/health-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  overflow: hidden; /* App-like feel */
+}
+
+/* Glassmorphism Utilities - Light Mode Optimized */
+.glass {
+  @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-lg;
+}
+
+.glass-card {
+  @apply bg-white/60 backdrop-blur-md border border-white/30 shadow-xl;
+}
+
+.glass-input {
+  @apply bg-white/50 backdrop-blur-md border border-white/30 focus:border-primary/50 transition-all duration-300;
+}
+
+/* Custom Scrollbar for Chat */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
